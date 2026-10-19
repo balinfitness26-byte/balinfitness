@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balin — Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1a1a1a; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-top: 36px; }
+  .updated { color: #666; font-size: 14px; margin-bottom: 32px; }
+  code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy for Balin</h1>
+<p class="updated">Last updated: 19 October 2026</p>
+
+<p>Balin ("the app") is a personal fitness, nutrition, sleep and habit-tracking app. This policy explains
+what data the app handles and where it goes. The short version: your logs and personal details stay on
+your own phone, or on a server you choose and control yourself — not on a server the developer runs or
+has access to.</p>
+
+<h2>1. Data stored only on your device</h2>
+<p>All of the following stays in local storage on your phone and is never sent anywhere unless you
+explicitly choose to back it up (see Section 2):</p>
+<ul>
+  <li>Your name, age, sex, weight, height, country/region, and fitness goals</li>
+  <li>Food, water and workout logs</li>
+  <li>Sleep and chronotype data, alarm and reminder settings</li>
+  <li>App passcode (stored as a hash on-device; never leaves the phone)</li>
+  <li>Any AI server address/access key, and any backup server address/access key you enter in Settings</li>
+</ul>
+<p>Uninstalling the app deletes all of this. There is no account to create and no login — the developer
+has no copy of this data and no way to access it.</p>
+
+<h2>2. Optional backup — your choice of destination</h2>
+<p>Settings → Your data lets you choose where backups go:</p>
+<ul>
+  <li><strong>Local only (default):</strong> nothing is uploaded anywhere. You can export a CSV copy
+  yourself at any time.</li>
+  <li><strong>Your own server:</strong> if you enter a server address (for example a NAS, a home server,
+  or a small VPS you run), the app sends your backup directly to that address, encrypted in transit via
+  HTTPS. That server is yours — the developer never has access to it or to what's stored there.</li>
+  <li><strong>Google Drive:</strong> planned for a future release; not yet functional.</li>
+</ul>
+
+<h2>3. The AI features</h2>
+<p>Balin's AI coaching, chat, diet suggestions and voice features work by sending your question or
+relevant log data to an AI server address you provide in Settings → AI engine (for example, your own
+locally-hosted model, or another compatible service of your choosing). The developer does not operate or
+have access to this server, and no AI processing happens unless you've configured one yourself.
+Responsibility for how that chosen server handles the data it receives rests with whoever operates it —
+read that service's own privacy terms if it's a third party.</p>
+
+<h2>4. Anonymous, shared food and workout database</h2>
+<p>When you log a food or workout that isn't already in the app's built-in list, the app may contribute
+that item's name and nutrition/exercise details to a shared, anonymous database (hosted on Google
+Firebase) so other users searching for the same item don't have to enter it from scratch. This only ever
+includes the food/workout name and its nutritional or exercise values — never your personal logs, your
+name, or any data that identifies you. It cannot be traced back to you.</p>
+
+<h2>5. Crash reporting</h2>
+<p>The app uses Firebase Crashlytics and Firebase App Check to detect crashes and confirm requests come
+from a genuine copy of the app. This can include basic device information (model, OS version) and a
+stack trace at the moment of a crash. It does not include your personal logs or account data (there is no
+account). You can see Google's own handling of this data at
+<a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
+
+<h2>6. What the developer never does</h2>
+<ul>
+  <li>Never sells or shares your personal data with advertisers or third parties</li>
+  <li>Never has access to your logs, your AI server, or your backup server</li>
+  <li>Does not show ads</li>
+  <li>Does not require an account or login of any kind</li>
+</ul>
+
+<h2>7. Children</h2>
+<p>Balin is intended for users aged 14 and up, and the app enforces this at setup. It is not directed at
+children under 13, and the developer does not knowingly collect data from children under 13.</p>
+
+<h2>8. Your choices</h2>
+<ul>
+  <li>Delete all local data: uninstall the app, or use Settings → Delete & advanced to wipe specific history.</li>
+  <li>Delete a self-hosted backup: delete the file/record on your own server — the developer has no copy to delete.</li>
+  <li>Stop AI or backup features at any time by clearing the address fields in Settings.</li>
+</ul>
+
+<h2>9. Changes to this policy</h2>
+<p>If this policy changes, the "Last updated" date above will change and, for any material change,
+notice will be given inside the app.</p>
+
+<h2>10. Contact</h2>
+<p>Questions about this policy or the app's data handling can be sent to:
+<a href="mailto:balinfitness26@gmail.com">balinfitness26@gmail.com</a></p>
+</body>
+</html>
