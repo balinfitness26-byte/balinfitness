@@ -1,92 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get an API key — Balin</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting an API key for Balin</title>
 <style>
-  :root { --bg:#0a0a0a; --card:#1a1a1a; --border:#2a2a2a; --text:#f1f3f4; --muted:#9aa0a6; --accent:#9575ff; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
-  .wrap { max-width:720px; margin:0 auto; padding:40px 20px 80px; }
-  h1 { font-size:28px; font-weight:800; margin:0 0 6px; }
-  .sub { color:var(--muted); font-size:15px; margin-bottom:28px; }
-  h2 { font-size:19px; font-weight:700; margin:36px 0 10px; color:var(--accent); }
-  p { color:#d6d8da; font-size:15px; }
-  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px 20px; margin:12px 0; }
-  code { background:#111; border:1px solid var(--border); border-radius:8px; padding:2px 7px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13.5px; color:#b9f6d0; }
-  a { color:var(--accent); text-decoration:none; }
-  a:hover { text-decoration:underline; }
+  :root { --bg:#ffffff; --fg:#1b1d1f; --muted:#5b6168; --accent:#0a7d55; --line:#e3e6e8; --code-bg:#f3f5f6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111315; --fg:#eceef0; --muted:#a3a9b0; --accent:#3ddc97; --line:#2a2e32; --code-bg:#1b1e21; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:1.9rem; margin:0 0 4px; }
+  h2 { font-size:1.2rem; margin:32px 0 8px; padding-top:16px; border-top:1px solid var(--line); }
+  h3 { font-size:1.02rem; margin:20px 0 6px; }
+  p, li { color:var(--fg); } .muted { color:var(--muted); }
+  a { color:var(--accent); }
   ol, ul { padding-left:22px; }
-  li { margin-bottom:8px; color:#d6d8da; font-size:15px; }
-  .pill { display:inline-block; background:rgba(149,117,255,0.15); color:var(--accent); border-radius:999px; padding:3px 12px; font-size:12.5px; font-weight:600; margin-bottom:6px; }
-  .back { display:inline-block; margin-top:48px; color:var(--muted); font-size:14px; }
-  .warn { border-left:3px solid #ff8a65; padding:10px 14px; background:rgba(255,138,101,0.08); border-radius:0 10px 10px 0; font-size:14px; color:#d6d8da; margin:16px 0; }
-  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:14px; }
-  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); }
-  th { color:var(--muted); font-weight:600; font-size:13px; }
-  .tiers { color:var(--muted); font-size:13px; }
+  li { margin:6px 0; }
+  code { background:var(--code-bg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.9em; }
+  .box { background:var(--code-bg); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin:14px 0; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:.92rem; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  .note { border-left:3px solid var(--accent); padding:2px 14px; margin:14px 0; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="pill">Balin · AI engine</div>
-  <h1>Getting an API key</h1>
-  <p class="sub">Use an AI company's own API directly with Balin — no server of your own needed. You're billed by that company, based on how much you use it and which model you pick.</p>
+<main>
+<h1>Get an API key for Balin</h1>
+<p class="muted">For people who'd rather pay a company directly for AI than run their own server or use Balin's built-in one.</p>
 
-  <div class="warn">
-    <strong>This costs real money, pay-as-you-go.</strong> It's billed to <em>you</em> by whichever company you choose — not by Balin, and not a fixed subscription. More capable ("smarter") models cost more per use than smaller, faster ones. Most people's day-to-day use with Balin (a few short messages a day) costs very little — often well under a dollar a month on an efficient model — but it's worth watching if you set up alerts or a spending cap, which every provider below lets you do.
-  </div>
+<p>Balin's "Use an API key" option works with <strong>any</strong> company whose API speaks the common OpenAI chat
+format &mdash; which, these days, is most of them. Pick one below, sign up, create a key, and paste it (along with
+that provider's base address) into Balin &rarr; Settings &rarr; AI engine &rarr; <strong>Use an API key</strong>.</p>
 
-  <h2>Pick a provider</h2>
-  <p>Any of these speak the same "OpenAI-compatible" format Balin expects, so the setup steps are the same for all of them — just a different base address.</p>
+<div class="note"><p>Your key is saved on your phone only. Balin sends it straight to whichever company you chose,
+the same way any app would &mdash; Balin's developer never sees it or the conversations that use it.</p></div>
 
-  <table>
-    <tr><th>Provider</th><th>Good for</th><th>Base address to use in Balin</th></tr>
-    <tr><td><a href="https://platform.openai.com" target="_blank">OpenAI</a></td><td>Best all-round quality</td><td><code>https://api.openai.com/v1</code></td></tr>
-    <tr><td><a href="https://console.groq.com" target="_blank">Groq</a></td><td>Very fast, cheap</td><td><code>https://api.groq.com/openai/v1</code></td></tr>
-    <tr><td><a href="https://openrouter.ai" target="_blank">OpenRouter</a></td><td>One key, many models/companies</td><td><code>https://openrouter.ai/api/v1</code></td></tr>
-    <tr><td><a href="https://www.together.ai" target="_blank">Together AI</a></td><td>Wide open-source model choice</td><td><code>https://api.together.xyz/v1</code></td></tr>
-    <tr><td><a href="https://console.mistral.ai" target="_blank">Mistral</a></td><td>Efficient, inexpensive</td><td><code>https://api.mistral.ai/v1</code></td></tr>
-    <tr><td><a href="https://aistudio.google.com/apikey" target="_blank">Google Gemini</a></td><td>Free tier available</td><td><code>https://generativelanguage.googleapis.com/v1beta/openai</code></td></tr>
-  </table>
-  <p class="tiers">Prices and free-tier limits change often — check each provider's own pricing page before committing, especially if you plan to use a top-tier model.</p>
+<div class="note"><p><strong>About model names:</strong> every company below retires old models and adds new
+ones over time, so a model name printed on this page can stop working later (this happened with an earlier
+version of this page, which listed a Gemini model that Google has since removed). Once you've entered your
+base address and key in Balin, tap <strong>Browse available models</strong> right there in Settings &rarr; AI
+engine &mdash; Balin asks the provider directly, right then, which models work for your key today, and lets
+you tap one in instead of typing a name that might be out of date. The model names below are just a starting
+point if you'd rather type one yourself.</p></div>
 
-  <h2>1. Create an account and get a key</h2>
-  <div class="card">
-    <ol>
-      <li>Open the provider's site from the table above and sign up (usually just email or Google sign-in).</li>
-      <li>Find <strong>API keys</strong> in their dashboard (usually under account/developer settings) and create a new key.</li>
-      <li><strong>Copy it immediately</strong> — most providers only show the full key once.</li>
-      <li>Add billing if the provider requires it (OpenAI and most others need a card on file before the key works, even for small usage — this is normal). Set a monthly spending cap here if they offer one; it's the easiest way to avoid surprises.</li>
-    </ol>
-  </div>
+<h2>1. Pick a provider and get a key</h2>
 
-  <h2>2. Pick a model</h2>
-  <div class="card">
-    <p>Each provider lists its available model names on their docs/pricing page. In general: smaller/faster models (often with "mini," "flash," or "small" in the name) are cheap and plenty good for everyday chat and reminders; the largest "flagship" models cost more per message but reason better on complex questions. A sensible starting point for most people:</p>
-    <ul>
-      <li>OpenAI: <code>gpt-4o-mini</code></li>
-      <li>Groq: <code>llama-3.3-70b-versatile</code></li>
-      <li>Gemini: <code>gemini-2.0-flash</code></li>
-    </ul>
-  </div>
+<h3>OpenAI</h3>
+<p>The company behind ChatGPT. Reliable, widely used, usage-based pricing.</p>
+<ol>
+  <li>Go to <a href="https://platform.openai.com/signup" target="_blank" rel="noopener">platform.openai.com</a> and create an account.</li>
+  <li>Add a payment method under <strong>Billing</strong> (API usage is separate from any ChatGPT subscription you may have).</li>
+  <li>Go to <strong>API keys</strong>, click <strong>Create new secret key</strong>, and copy it immediately &mdash; it's shown only once.</li>
+</ol>
+<table><tr><th>Base address</th><td><code>https://api.openai.com/v1</code></td></tr>
+<tr><th>Model to try (if typing one by hand)</th><td><code>gpt-4o-mini</code> (fast and inexpensive)</td></tr></table>
 
-  <h2>3. Connect it in Balin</h2>
-  <div class="card">
-    <p>Settings → AI engine → <strong>Use an API key</strong>, then:</p>
-    <ul>
-      <li><strong>Base address</strong>: from the table above</li>
-      <li><strong>API key</strong>: the key you copied in step 1</li>
-      <li><strong>Model</strong>: the exact model name from step 2</li>
-    </ul>
-    <p>Tap <strong>Save &amp; test</strong>. If it connects, you're set — Balin now talks straight to that provider with your key, billed to your own account there.</p>
-  </div>
+<h3>Groq</h3>
+<p>Extremely fast responses, generous free tier, smaller model selection.</p>
+<ol>
+  <li>Go to <a href="https://console.groq.com" target="_blank" rel="noopener">console.groq.com</a> and sign in with Google or GitHub.</li>
+  <li><strong>API Keys</strong> &rarr; <strong>Create API Key</strong>, name it, copy it.</li>
+</ol>
+<table><tr><th>Base address</th><td><code>https://api.groq.com/openai/v1</code></td></tr>
+<tr><th>Model to try (if typing one by hand)</th><td><code>llama-3.3-70b-versatile</code></td></tr></table>
 
-  <h2>Rather not pay per use?</h2>
-  <p>You can run a model yourself for free instead — see <a href="self-hosting.html">setting up your own AI server</a>.</p>
+<h3>Together AI</h3>
+<p>Wide choice of open-source models, pay-as-you-go with a small free credit to start.</p>
+<ol>
+  <li>Go to <a href="https://api.together.ai" target="_blank" rel="noopener">api.together.ai</a> and sign up.</li>
+  <li><strong>Settings &rarr; API Keys</strong>, copy the default key or create a new one.</li>
+</ol>
+<table><tr><th>Base address</th><td><code>https://api.together.xyz/v1</code></td></tr>
+<tr><th>Model to try (if typing one by hand)</th><td><code>meta-llama/Llama-3.3-70B-Instruct-Turbo</code></td></tr></table>
 
-  <a class="back" href="./">← Back to Balin</a>
-</div>
+<h3>Mistral</h3>
+<p>French AI lab, their own frontier models, a free tier for light personal use.</p>
+<ol>
+  <li>Go to <a href="https://console.mistral.ai" target="_blank" rel="noopener">console.mistral.ai</a> and create an account.</li>
+  <li><strong>API Keys</strong> &rarr; <strong>Create new key</strong>, copy it.</li>
+</ol>
+<table><tr><th>Base address</th><td><code>https://api.mistral.ai/v1</code></td></tr>
+<tr><th>Model to try (if typing one by hand)</th><td><code>mistral-small-latest</code></td></tr></table>
+
+<h3>OpenRouter</h3>
+<p>One key, one bill, access to dozens of other companies' models (including many free ones) through a single
+address &mdash; a good choice if you want to try several without juggling separate accounts.</p>
+<ol>
+  <li>Go to <a href="https://openrouter.ai" target="_blank" rel="noopener">openrouter.ai</a> and sign in.</li>
+  <li><strong>Keys</strong> &rarr; <strong>Create Key</strong>, copy it.</li>
+</ol>
+<table><tr><th>Base address</th><td><code>https://openrouter.ai/api/v1</code></td></tr>
+<tr><th>Model to try (if typing one by hand)</th><td><code>meta-llama/llama-3.3-70b-instruct</code> (or add <code>:free</code> for a no-cost option)</td></tr></table>
+
+<h3>Google Gemini</h3>
+<p>Google's own models, reachable through their OpenAI-compatible address.</p>
+<ol>
+  <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> and sign in with a Google account.</li>
+  <li><strong>Create API key</strong>, copy it.</li>
+</ol>
+<table><tr><th>Base address</th><td><code>https://generativelanguage.googleapis.com/v1beta/openai</code></td></tr>
+<tr><th>Model to try (if typing one by hand)</th><td><code>gemini-3.8-flash</code> &mdash; but Google renames/retires these faster than most, so Browse available models is especially worth using here</td></tr></table>
+
+<h2>2. Entering it in Balin</h2>
+<p>Open Balin &rarr; Settings &rarr; AI engine &rarr; <strong>Use an API key</strong>, then fill in:</p>
+<ul>
+  <li><strong>Base address</strong> &mdash; the exact address from the table above for the provider you chose.</li>
+  <li><strong>API key</strong> &mdash; the key you just copied.</li>
+  <li><strong>Model</strong> &mdash; tap <strong>Browse available models</strong> once the address and key above are
+  filled in, and pick one from the live list Balin gets back from the provider. This is the reliable way to fill
+  this field, since it always reflects what that provider currently offers for your key &mdash; not a name printed
+  on a page that can go stale.</li>
+</ul>
+<p>Tap <strong>Save &amp; test</strong> &mdash; Balin sends a small test message and tells you right away if the key,
+address, or model is wrong.</p>
+
+<div class="note"><p><strong>Costs:</strong> every provider above bills (or rate-limits) based on your own usage.
+Balin's developer has no visibility into or control over what you're charged &mdash; check each provider's own
+pricing page before you start, and keep an eye on usage if you're cost-conscious.</p></div>
+
+<h2>3. Questions</h2>
+<p><a href="mailto:balinfitness26@gmail.com">balinfitness26@gmail.com</a></p>
+</main>
 </body>
 </html>
