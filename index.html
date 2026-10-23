@@ -22,96 +22,39 @@
 <body>
 <main>
 <h1>Balin Privacy Policy</h1>
-<p class="muted">Last updated: 13 October 2026 · App: Balin (com.athul.balin)</p>
+<p class="muted">Last updated: 23 October 2026 · App: Balin (com.athul.balin)</p>
 
-<p>Balin is a fitness and nutrition tracker with an AI coach. This page explains what the app stores, what leaves
-your phone, and why. In short: your logs live on your phone; they go to the cloud only if you turn on cloud backup;
-AI features send the details needed to answer you to Balin's own AI server (Kattu, run by the developer); nothing is sold and there are no ads.</p>
+<p>Balin is a personal fitness, nutrition, sleep and habit-tracking app with an optional AI coach. This page explains
+what the app stores and what, if anything, leaves your phone. In short: there is no Balin account and no sign-in;
+your logs live on your phone; they leave it only if you turn on a backup destination you pick yourself, or if you
+connect an AI feature to a server you choose. Nothing is sold, and there are no ads and no analytics.</p>
 
 <h2>1. What the app stores on your phone</h2>
 <ul>
   <li>Profile details you enter: name, birth year, sex, height, weight, body measurements, goals and units.</li>
   <li>Your logs: workouts, meals and water, daily check-ins (sleep, soreness, energy), protocols and training programs.</li>
-  <li>Settings, reminders and your app passcode (stored only as a salted, one-way hash, never in readable form).</li>
+  <li>Settings, reminders, and your app passcode (stored only as a salted, one-way hash, never in readable form).</li>
+  <li>Any AI server address/access key or API key, and any backup server address/key you enter in Settings — these
+  stay on this phone and are never included in any backup.</li>
 </ul>
-<p>This data stays on your device. Android's own backup may copy it to your Google account if you have device backup
-switched on; that backup is controlled by Android and your Google account, not by us.</p>
+<p>Uninstalling the app deletes all of this. There is no account to create and no login of any kind — the developer
+has no copy of this data and no way to access it. (Android's own device backup, if you have it switched on in
+Android's own settings, may copy app data to your Google account; that is controlled by Android and your Google
+account, not by Balin.)</p>
 
-<h2>2. Health Connect</h2>
-<p>If you allow it, Balin <strong>reads</strong> your daily <strong>step count</strong> and <strong>sleep sessions</strong>
-from Health Connect. It never writes to Health Connect. Steps estimate your daily activity; sleep times feed your
-recovery check-in and bedtime reminders. When you ask the AI coach for a readiness check, your sleep hours may be
-included in that request (see section 4).</p>
-<p>Data from Health Connect is used only to provide these features inside Balin. It is not used for advertising, not
-sold, and not shared with anyone except as described here to provide a feature you asked for. You can withdraw access
-at any time in Health Connect or in Balin's Settings.</p>
-
-<h2>3. Phone usage access (optional)</h2>
-<p>If you switch on automatic sleep detection and grant "Usage access", Balin looks at when your phone was last used at
-night and first used in the morning to estimate your bedtime and wake time. Only those times are kept, on your phone.
-Which apps you used is not stored or sent anywhere.</p>
-
-<h2>4. AI features (Kattu, the developer's own AI server)</h2>
-<p>Balin's AI coach, food and exercise lookups, meal ideas, readiness check and program builder send your request to
-Kattu, an AI server run by Balin's developer on their own computer (an open-source Llama model through Ollama). No
-Google, OpenAI or other AI company receives these requests. Depending on the feature, a request can include what you
-typed, the food or exercise name, and the profile and log details needed to answer (for example age, sex, weight,
-height, body-fat estimate, recent calories, recent training and sleep). Requests travel over an encrypted (HTTPS)
-connection, through Tailscale's network service, which carries the encrypted traffic but can't read it.</p>
-<p>The server answers your request and does not save your question or its answer. It keeps a short technical log
-(time, a random ID for your app install, request size and how long it took) to share the server fairly and spot
-misuse. The random ID isn't linked to your name, email or account. AI answers can be wrong: they are general
-information, not medical advice. You can report a bad answer with the "Report" link under it.</p>
-
-<h2>5. Cloud backup (optional)</h2>
-<p>If you create a Balin account (email and password, handled by Firebase Authentication), your logs, custom foods and
-exercises, and settings are backed up to Google Cloud Firestore so you can restore them on another phone. Only you can
-read your backup; it is protected by your account and our database security rules. Your passcode is never included.</p>
-
-<h2>6. Shared food and exercise list</h2>
-<p>When you're logged in and add a custom food or exercise that isn't in Balin's list yet, its name and nutrition or
-intensity values are added to a shared list that other Balin users can search. Nothing that identifies you is
-attached to it.</p>
-
-<h2>7. Crash reports</h2>
-<p>If the app crashes, Firebase Crashlytics sends a crash report (the error, device model, Android version and an
-installation ID) so the problem can be fixed. It doesn't include your logs or profile.</p>
-
-<h2>8. What we don't do</h2>
+<h2>2. Optional backup — a destination you choose</h2>
+<p>Settings → Your data lets you choose where backups go. Whichever you pick, the developer has no access to it:</p>
 <ul>
-  <li>No advertising, no ad tracking, no advertising ID.</li>
-  <li>No selling or renting of your data.</li>
-  <li>No analytics on what you do in the app.</li>
+  <li><strong>Local only (default):</strong> nothing is uploaded anywhere. You can export a CSV copy yourself at any
+  time, and Balin reminds you to keep that copy current.</li>
+  <li><strong>Your own server:</strong> if you enter a server address (for example a NAS, a home server, or a small
+  VPS you run), the app sends your backup directly to that address over HTTPS. That server is yours.</li>
+  <li><strong>Your own Google Drive:</strong> you can sign in with Google and let Balin back up to a hidden,
+  app-only folder in your own Drive (the "appdata" space) that only Balin can see — not the rest of your Drive.
+  Only your Google account can read it.</li>
 </ul>
 
-<h2>9. Summary of data that leaves your phone</h2>
-<div class="wrap">
-<table>
-  <tr><th>Data</th><th>Sent to</th><th>When</th></tr>
-  <tr><td>Your request plus the profile/log details it needs, and a random install ID</td><td>Kattu (the developer's own AI server)</td><td>Only when you use an AI feature</td></tr>
-  <tr><td>Email address, account ID</td><td>Firebase Authentication</td><td>Only if you create a cloud account</td></tr>
-  <tr><td>Logs, custom foods/exercises, settings</td><td>Google Cloud Firestore (your private backup)</td><td>Only with cloud backup on</td></tr>
-  <tr><td>Name and values of a new custom food/exercise</td><td>Shared list in Firestore</td><td>When logged in and you add one</td></tr>
-  <tr><td>Crash details, device model, installation ID</td><td>Firebase Crashlytics</td><td>When the app crashes</td></tr>
-</table>
-</div>
-
-<h2>10. Deleting your data</h2>
-<ul>
-  <li><strong>On your phone:</strong> Settings in Balin lets you delete workout and nutrition history; uninstalling the
-    app removes everything stored on the phone.</li>
-  <li><strong>Cloud account and backup:</strong> Balin → Settings → Cloud backup → <em>Delete cloud account</em>. This
-    deletes your backup and your account immediately. If you no longer have the app, see
-    <a href="delete-account.html">how to request deletion</a>.</li>
-  <li><strong>Health Connect:</strong> remove Balin's access in Health Connect at any time.</li>
-</ul>
-
-<h2>11. Age</h2>
-<p>Balin is not meant for children under 14 and the app asks for your birth year to enforce this.</p>
-
-<h2>12. Changes and contact</h2>
-<p>If this policy changes, the date at the top changes too. Questions or requests:
-<a href="mailto:balinfitness26@gmail.com">balinfitness26@gmail.com</a>.</p>
-</main>
-</body>
-</html>
+<h2>3. The AI features (optional, off until you set one up)</h2>
+<p>Balin's AI coach, Chat with Balin, food and exercise lookups, meal ideas, the readiness check and the program
+builder only work once you connect an AI engine in Settings → AI engine. There are two options, both configured by
+you, not the developer:</p>
